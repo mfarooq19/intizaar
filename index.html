@@ -33,6 +33,12 @@
         const targetDate = new Date("May 30, 2025 00:00:00");
         const timeDifference = targetDate - currentDate;
 
+        if (timeDifference <= 0) {
+          document.getElementById("countdown").textContent =
+            "Survived " + formatTime(-timeDifference) + " Successfully";
+          return;
+        }
+
         let seconds = Math.floor(timeDifference / 1000);
         let minutes = Math.floor(seconds / 60);
         let hours = Math.floor(minutes / 60);
@@ -58,3 +64,4 @@
     </script>
   </body>
 </html>
+
