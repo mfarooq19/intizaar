@@ -40,6 +40,19 @@
       <h2>~Farha for life</h2>
     </div>
     <script>
+      function formatTime(timeDifference) {
+        let seconds = Math.floor(timeDifference / 1000);
+        let minutes = Math.floor(seconds / 60);
+        let hours = Math.floor(minutes / 60);
+        const days = Math.floor(hours / 24);
+
+        hours %= 24;
+        minutes %= 60;
+        seconds %= 60;
+
+        return days + " days, " + hours + " hours, " + minutes + " minutes, " + seconds + " seconds";
+      }
+
       function updateCountdown() {
         const currentDate = new Date();
         const targetDate = new Date("May 31, 2025 00:00:00");
